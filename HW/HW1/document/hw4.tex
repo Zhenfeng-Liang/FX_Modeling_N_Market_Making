@@ -1,0 +1,310 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{HW 1} % Assignment title
+\newcommand{\hmwkDueDate}{Sept 9,\ 2015} % Due date
+\newcommand{\hmwkClass}{FX Modeling} % Course/class
+\newcommand{\hmwkClassTime}{Sept 2,\ 2015} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Mark Higgins} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhenfeng Liang} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Describe the four factors that contribute to the bid and ask prices a market maker will show to a client during voice trading?
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    (1) Inter-dealer market. The market makers will consider how hard for them to hedge their risk. 
+
+    (2) Current risk position. The risk profile matters. If the market makers are taking high risk, they would prefer to quote a bid ask price to decrease their risk exposure.
+
+    (3) Market views. For sure the market view of the market maker matters. For example, if the market maker thinks the market will be going up, it would increase their bid so to increase their odds to buy from others and increase the ask so to decrease their odds to be bought by others.
+
+    (4) Client behavior. Based onsome historical data, market makers can have a basic idea whether the client is inclined to buy or sell.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Why has the daily turnover in the FX market increased so much in the past fifteen years? Give some statistics.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    According to the Bank for International Settlements, the preliminary global results from the 2013 Triennial Central Bank Survey of Foreign Exchange and OTC Derivatives Markets Activity show that trading in foreign exchange markets averaged \$ 5.3 trillion per day in April 2013. This is up from \$ 4.0 trillion in April 2010 and \$ 3.3 trillion in April 2007. Foreign exchange swaps were the most actively traded instruments in April 2013, at \$2.2 trillion per day, followed by spot trading at \$2.0 trillion. According to the Bank for International Settlements, as of April 2010, average daily turnover in global foreign exchange markets is estimated at \$3.98 trillion, a growth of approximately 20\% over the \$3.21 trillion daily volume as of April 2007. Some firms specializing on foreign exchange market had put the average daily turnover in excess of US\$4 trillion.
+    
+    Turnover means the number of shares traded for a period as a percentage of the total shares in a portfolio or of an exchange.
+ 
+    The reason is during the past two decades, computing power and price discovery algorithm are becoming much more powerful. People can trade as fast as they want, people can discover arbitrage opportunities much faster. So, there are more and more trades happening out there. 
+    
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Describe the OTC market structure and the different roles involved in executing a trade. Describe the steps involved in executing a trade for voice trading and then for electronic trading.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    OTC market structure: \\
+   
+    (1) Clients. Individuals or firms who are not dealers want to trade FX
+  
+    (2) Salespeople. Humans who talk to human clients on the phone (or over chat channels like Bloomberg) and take client requests for trades.
+    
+    (3) Trader. Humans who talk to human salespeople in response to a client trade request
+
+    (4) Inter-dealer market for traders to trade with each other. \\
+
+    Voice trading steps: \\
+    
+    Clients' traders call salespersons to say what they want to trade. Salespersons ask the traders. Traders looked at their risk profile, market condition, and inter-dealer market, and consider the clients historical behavior and then yell back the quote to salespersons. The sales quotes them back to the client traders. The clients then go to other deals to repeat this process to get different quotes and get the quotes as best as they can. \\
+
+    Electronic trading steps: \\
+
+    Client requests a price from multiple dealers simultaneously through an app, who know who the client is when they quote. Client sees prices from many dealers at once, by name, and can click to deal with whomever they like
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Today is October 27th, 2015. Tomorrow (October 28th) is a good business day for all three currencies. October 29th is a JPY currency settlement holiday. October 30th (a Friday) is a USD settlement holiday and November 2nd (a Monday) is a EUR settlement holiday. November 3rd is a good business day for all three currencies.
+
+    The EURUSD mid-market spot rate is 1.1300 (the price of a EUR in USD) and the USDJPY mid-market spot rate is 120.00 (the price of a USD in JPY). The USD interest rate is 0.25\%, the EUR interest rate is 0.50\%, and the JPY interest rate is 0.10\%.
+
+    What are the spot dates for EURUSD, for USDJPY, and for EURJPY? What is the EURJPY mid-market spot rate implied from the triangle arbitrage?
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    Spot dates: \\
+    \begin{equation}   
+      EURUSD 10/29/2015 
+    \end{equation}
+    \begin{equation}   
+      USDJPY 10/31/2015 
+    \end{equation}
+    \begin{equation}   
+      EURJPY 10/30/2015 
+    \end{equation}  
+    \begin{equation}
+      F_{EURUSD_{10/30}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.13 * e^{(0.0025 - 0.0050)/252} =  1.129989
+    \end{equation}
+    \begin{equation}
+      F_{USDJPY_{10/30}} = S_{USDJPY_{10/31}} * e^{(r_{JPY} - r_{USD})t} = 120 * e^{(0.0010 - 0.0025)/(-252)} =  120.007 
+    \end{equation}
+    \begin{equation}
+      S_{EURJPY_{10/30}} = F_{EURUSD_{10/30}} * F_{USDJPY_{10/30}} = 135.5995
+    \end{equation}
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Same market as Question 4. Assume zero bid/ask spread in interest rates.
+    Take the bid/ask for EURUSD as 1.1299/1.1301, and the bid/ask for USDJPY as 119.99/120.01. What is the bid/ask for EURJPY implied from the triangle arbitrage?
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    Similar logic as problem 4.
+
+    Bid price:
+     \begin{equation}
+      F_{EURUSD_{10/30}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.1299 * e^{(0.0025 - 0.0050)/252} = 1.129889
+    \end{equation}
+    \begin{equation}
+      F_{USDJPY_{10/30}} = S_{USDJPY_{10/31}} * e^{(r_{JPY} - r_{USD})t} = 119.99 * e^{(0.0010 - 0.0025)/(-252)} = 119.9907
+    \end{equation}
+    \begin{equation}
+      S_{EURJPY_{10/30}} = F_{EURUSD_{10/30}} * F_{USDJPY_{10/30}} = 135.5762
+    \end{equation}   
+    
+    Ask price
+     \begin{equation}
+      F_{EURUSD_{10/30}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.1301 * e^{(0.0025 - 0.0050)/252} = 1.130089 
+    \end{equation}
+    \begin{equation}
+      F_{USDJPY_{10/30}} = S_{USDJPY_{10/31}} * e^{(r_{JPY} - r_{USD})t} = 120.01 * e^{(0.0010 - 0.0025)/(-252)} = 120.0107
+    \end{equation}
+    \begin{equation}
+      S_{EURJPY_{10/30}} = F_{EURUSD_{10/30}} * F_{USDJPY_{10/30}} = 135.6228
+    \end{equation}   
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+\end{document}
