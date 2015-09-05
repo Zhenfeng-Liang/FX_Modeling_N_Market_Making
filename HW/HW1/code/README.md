@@ -1,4 +1,4 @@
-####Monte Carlo Simulation for Electronic Hedging
+###Monte Carlo Simulation for Electronic Hedging
 
 ###Copyright (c) 2015 Zhenfeng Liang, MFE, Baruch College
 
