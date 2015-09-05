@@ -306,5 +306,40 @@
   \end{homeworkSection}
 \end{homeworkProblem}
 
+%----------------------------------------------------------------------------------------
+%   PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Programming assignments. Monte Carlo simulation for electronic hedging. See assignment document for details.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    
+    Please find out the attached code file for the model implementation. \\
+ 
+    Some statistics: \\
+
+    Num paths:      10000   Time steps:     500 \\
+    When hedge target is  0  SR is  0.0892168130455 \\
+    When hedge target is  3  SR is  0.180370614172 \\ 
+
+    Num paths:      30000   Time steps:     500 \\
+    When hedge target is  0  SR is  0.088537876052 \\
+    When hedge target is  3  SR is  0.180955628021 \\ 
+
+    Num paths:      50000   Time steps:     500 \\
+    When hedge target is  0  SR is  0.0888661799433 \\
+    When hedge target is  3  SR is  0.180605456638 \\ 
+
+    Num paths:      70000   Time steps:     500 \\
+    When hedge target is  0  SR is  0.0887936478036 \\
+    When hedge target is  3  SR is  0.180458538164 \\ 
+
+    We can see that the Sharp ratio have converged to the third decimal place which I think should be enough to demonstrate the problem. \\
+    From the 4 experiments above, we can see when we set the hedge target equal to the delta limit, we will have a larger sharp ratio which make sense due to the model specification. There would be two main difference between this two parameter set up. First, if you choose to hedge the whole position to be zero, you need to pay more spread to the inter-dealer, while the inter-dealer spread is wider than the client spread. Second, someone might say that if I don't hedge it to be zero, the market maker will have some risk exposure to the spot rate then they might lose money. However, this statement doesn't hold in our model specification. Because we are assuming the spot rate dynamics is a Brownian Motion, which, is a martingale. So, it means, ON AVERAGE, the risk exposure does not affect your pnl.  
+  \end{homeworkSection}
+\end{homeworkProblem}
+
 
 \end{document}
