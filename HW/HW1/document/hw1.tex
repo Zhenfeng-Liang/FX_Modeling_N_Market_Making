@@ -250,19 +250,19 @@
       EURUSD 10/29/2015 
     \end{equation}
     \begin{equation}   
-      USDJPY 10/31/2015 
+      USDJPY 11/02/2015 
     \end{equation}
     \begin{equation}   
-      EURJPY 10/30/2015 
+      EURJPY 11/03/2015 
     \end{equation}  
     \begin{equation}
-      F_{EURUSD_{10/30}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.13 * e^{(0.0025 - 0.0050)/252} =  1.129989
+      F_{EURUSD_{11/03}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.13 * e^{(0.0025 - 0.0050) / 365 * 5} = 1.129961
     \end{equation}
     \begin{equation}
-      F_{USDJPY_{10/30}} = S_{USDJPY_{10/31}} * e^{(r_{JPY} - r_{USD})t} = 120 * e^{(0.0010 - 0.0025)/(-252)} =  120.007 
+      F_{USDJPY_{11/03}} = S_{USDJPY_{11/02}} * e^{(r_{JPY} - r_{USD})t} = 120 * e^{(0.0010 - 0.0025)/(365)} = 119.9995
     \end{equation}
     \begin{equation}
-      S_{EURJPY_{10/30}} = F_{EURUSD_{10/30}} * F_{USDJPY_{10/30}} = 135.5995
+      S_{EURJPY_{11/03}} = F_{EURUSD_{11/03}} * F_{USDJPY_{11/03}} = 135.5948
     \end{equation}
 
   \end{homeworkSection}
@@ -284,24 +284,24 @@
 
     Bid price:
      \begin{equation}
-      F_{EURUSD_{10/30}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.1299 * e^{(0.0025 - 0.0050)/252} = 1.129889
+      F_{EURUSD_{11/03}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.1299 * e^{(0.0025 - 0.0050)/365 * 5} = 1.129861
     \end{equation}
     \begin{equation}
-      F_{USDJPY_{10/30}} = S_{USDJPY_{10/31}} * e^{(r_{JPY} - r_{USD})t} = 119.99 * e^{(0.0010 - 0.0025)/(-252)} = 119.9907
+      F_{USDJPY_{11/03}} = S_{USDJPY_{11/02}} * e^{(r_{JPY} - r_{USD})t} = 119.99 * e^{(0.0010 - 0.0025)/(365)} = 119.9895
     \end{equation}
     \begin{equation}
-      S_{EURJPY_{10/30}} = F_{EURUSD_{10/30}} * F_{USDJPY_{10/30}} = 135.5762
+      S_{EURJPY_{11/03}} = F_{EURUSD_{11/03}} * F_{USDJPY_{11/03}} = 135.5715
     \end{equation}   
     
     Ask price
      \begin{equation}
-      F_{EURUSD_{10/30}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.1301 * e^{(0.0025 - 0.0050)/252} = 1.130089 
+      F_{EURUSD_{11/03}} = S_{EURUSD_{10/29}} * e^{(r_{USD} - r_{EUR})t} = 1.1301 * e^{(0.0025 - 0.0050) / 365 * 5} = 1.130061
     \end{equation}
     \begin{equation}
-      F_{USDJPY_{10/30}} = S_{USDJPY_{10/31}} * e^{(r_{JPY} - r_{USD})t} = 120.01 * e^{(0.0010 - 0.0025)/(-252)} = 120.0107
+      F_{USDJPY_{11/03}} = S_{USDJPY_{11/02}} * e^{(r_{JPY} - r_{USD})t} = 120.01 * e^{(0.0010 - 0.0025)/(365)} = 120.0095
     \end{equation}
     \begin{equation}
-      S_{EURJPY_{10/30}} = F_{EURUSD_{10/30}} * F_{USDJPY_{10/30}} = 135.6228
+      S_{EURJPY_{11/03}} = F_{EURUSD_{11/03}} * F_{USDJPY_{11/03}} = 135.6181
     \end{equation}   
   \end{homeworkSection}
 \end{homeworkProblem}
@@ -320,24 +320,20 @@
  
     Some statistics: \\
 
-    Num paths:      10000   Time steps:     500 \\
-    When hedge target is  0  SR is  0.0892168130455 \\
-    When hedge target is  3  SR is  0.180370614172 \\ 
+    Num paths:      5000    Time steps:     500  \\
+    When hedge target is  0  SR is  3.03693915856 \\
+    When hedge target is  3  SR is  3.40631345576 \\
+
+    Num paths:      10000   Time steps:     500  \\
+    When hedge target is  0  SR is  3.0262242934 \\
+    When hedge target is  3  SR is  3.41648294838 \\
 
     Num paths:      30000   Time steps:     500 \\
-    When hedge target is  0  SR is  0.088537876052 \\
-    When hedge target is  3  SR is  0.180955628021 \\ 
-
-    Num paths:      50000   Time steps:     500 \\
-    When hedge target is  0  SR is  0.0888661799433 \\
-    When hedge target is  3  SR is  0.180605456638 \\ 
-
-    Num paths:      70000   Time steps:     500 \\
-    When hedge target is  0  SR is  0.0887936478036 \\
-    When hedge target is  3  SR is  0.180458538164 \\ 
+    When hedge target is  0  SR is  3.02879973364 \\
+    When hedge target is  3  SR is  3.41038679013 \\
 
     We can see that the Sharp ratio have converged to the third decimal place which I think should be enough to demonstrate the problem. \\
-    From the 4 experiments above, we can see when we set the hedge target equal to the delta limit, we will have a larger sharp ratio which make sense due to the model specification. There would be two main difference between this two parameter set up. First, if you choose to hedge the whole position to be zero, you need to pay more spread to the inter-dealer, while the inter-dealer spread is wider than the client spread. Second, someone might say that if I don't hedge it to be zero, the market maker will have some risk exposure to the spot rate then they might lose money. However, this statement doesn't hold in our model specification. Because we are assuming the spot rate dynamics is a Brownian Motion, which, is a martingale. So, it means, ON AVERAGE, the risk exposure does not affect your pnl.  
+    From the 3 experiments above, we can see when we set the hedge target equal to the delta limit, we will have a larger sharp ratio which make sense due to the model specification. There would be two main difference between this two parameter set up. First, if you choose to hedge the whole position to be zero, you need to pay more spread to the inter-dealer, while the inter-dealer spread is wider than the client spread. Second, someone might say that if I don't hedge it to be zero, the market maker will have some risk exposure to the spot rate then they might lose money. However, this statement doesn't hold in our model specification. Because we are assuming the spot rate dynamics is a Brownian Motion, which, is a martingale. So, it means, ON AVERAGE, the risk exposure does not affect your pnl.  
   \end{homeworkSection}
 \end{homeworkProblem}
 

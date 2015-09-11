@@ -67,13 +67,14 @@ def simulate_one_path(paras_dict):
     
     # position vector
     pos = np.zeros(time_steps + 1)
+    hedge_num = 0
     for i in range(time_steps + 1):
         # A little trick here. When i=0, pos[i-1] is the last element of the pos which is zero. This makes the formula neater.
         pos[i] = pos[i-1] + trade_size_vec[i]
         
         if fabs(pos[i]) > fabs(delta_limit):
             hedge_notional = fabs(pos[i]) - fabs(hedge_target)
-            
+            hedge_num += 1
             # Minus the pnl we need to pay to the inter-dealers, which is always positive except S<0 which is almost impossible
             pnl_vec[i] -= hedge_trade_spread * S[i] * hedge_notional * 0.5
             if pos[i] > 0:
@@ -84,12 +85,15 @@ def simulate_one_path(paras_dict):
     # Plus pnl from the exposure
     pnl_vec[1:len(pnl_vec)] += pos[:len(pos)-1] * dS
     
-    # Get statistics
-    pnl_mean = pnl_vec.mean()
-    pnl_std = pnl_vec.std()
-    sharp_ratio = pnl_mean/pnl_std
+    # Cumulative pnl
+    pnl_cum_sum = pnl_vec.cumsum()
+    pnl_cum = pnl_cum_sum[-1]
+    sd_cum = pnl_cum_sum.std()
 
-    return pnl_mean, pnl_std, sharp_ratio
+    # Get statistics
+    sharp_ratio = pnl_cum / sd_cum
+
+    return pnl_cum, sd_cum, sharp_ratio, hedge_num
 
 
 def MC_trigger(paras_dict):
@@ -104,25 +108,29 @@ def MC_trigger(paras_dict):
     paras_dict['prob_trade'] =  1 - exp(-1 * paras_dict['_lambda_'] * dt_sec)
     dt = dt_sec / (paras_dict['trading_days_per_year'] * 24 * 60 * 60)
     paras_dict['sigma_dt'] = sqrt(dt) * paras_dict['sigma']
-
     mean_sum = 0
     std_sum = 0
     sharp_ratio_sum = 0
-
+    hedge_num_sum = 0
     num_paths = paras_dict['num_paths']
 
+    mc_pnl_each_path = np.zeros(num_paths)
     # loop over each path
     for i in range(num_paths):
-        mean_i, std_i, sharp_ratio_i = simulate_one_path(paras_dict)
+        mean_i, std_i, sharp_ratio_i, hedge_num_i = simulate_one_path(paras_dict)
         mean_sum += mean_i
+        mc_pnl_each_path[i] = mean_i
         std_sum += std_i
         sharp_ratio_sum += sharp_ratio_i
+        hedge_num_sum += hedge_num_i
     
     mc_pnl = mean_sum / num_paths
     mc_std = std_sum / num_paths
     mc_sharp_ratio = sharp_ratio_sum / num_paths
+    mc_hedge_num = hedge_num_sum / num_paths
 
-    return mc_sharp_ratio
+    new_mc_SR = mc_pnl_each_path.mean() / mc_pnl_each_path.std()
+    return new_mc_SR
 
 
 def main():
