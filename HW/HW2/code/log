@@ -1,0 +1,37 @@
+Number of path is 10000
+T = 0.1
+UnHedged sd is 3.01551036918e-05
+TriHedged sd is 1.90585191105e-06
+FactorHedged sd is 1.65245664879e-07
+
+
+T = 0.25
+UnHedged sd is 7.16775743339e-05
+TriHedged sd is 0.0
+FactorHedged sd is 0.0
+
+
+T = 0.5
+UnHedged sd is 0.000131562921006
+TriHedged sd is 1.69589553458e-06
+FactorHedged sd is 1.33683956579e-07
+
+
+T = 0.75
+UnHedged sd is 0.000181130331647
+TriHedged sd is 2.4342198758e-06
+FactorHedged sd is 1.21641449724e-07
+
+
+T = 1.0
+UnHedged sd is 0.000224302695446
+TriHedged sd is 0.0
+FactorHedged sd is 0.0
+
+
+T = 2.0
+UnHedged sd is 0.000361413933186
+TriHedged sd is 0.000131455687828
+FactorHedged sd is 1.13681997669e-06
+
+

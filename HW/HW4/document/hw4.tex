@@ -1,0 +1,399 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{HW 4} % Assignment title
+\newcommand{\hmwkDueDate}{Oct 06,\ 2015} % Due date
+\newcommand{\hmwkClass}{FX Modeling} % Course/class
+\newcommand{\hmwkClassTime}{Sept 30,\ 2015} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Mark Higgins} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhenfeng Liang} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (4 marks):}
+
+The current time is Wednesday at 1pm and you see the overnight implied volatility (for 10am expiration on Thursday) trading at 9\%. The FX markets are open for trading every hour between now and tomorrow at 10am. \\
+
+The Federal Reserve Chairwoman is speaking about the economy from 2-3pm, and that event adds an extra 0.5 trading days worth of variance on top of the usual variance for that time period. \\
+
+What should the overnight implied volatility be at 3pm, all else being equal?
+
+  \end{homeworkSection}
+
+  \begin{homeworkSection}{Solution}
+
+    Some numbers: \\
+    Calendar time is $\frac{1}{365}$. Trading hours from today 1 p.m to tomorrow 10 a.m: 21 hours, plus event trading hours: 33 hours. Trading hours from today 3 p.m to tomorrow 10 a.m: 19 hours.
+    
+    \begin{eqnarray}
+      totVar = var^2 * calendarTime = 0.09 ^2 * \frac{1}{365} = 2.219178e^{-05} \\
+      TTVol = \sqrt{totVar / totTT} = \sqrt{2.219178e^{-05} / 33} = 0.0008200477 \\
+      newVar = TTVol^2 * newTT = 0.0008200477^2 * 19  = 1.277709e^{-05} \\
+      impVolNew = \sqrt{newVar / calendarTime} = \sqrt{1.277709e^{-05} / (\frac{1}{365})} = 0.06829082
+    \end{eqnarray}
+
+    
+    Therefore, the overnight implied volatility at 3 p.m should be 6.83 \%.
+    
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (3 marks):}
+
+    In stochastic volatility models, why is there a smile? Describe the genesis of the smile in terms of vega gamma. \\
+
+    Similarly, describe why stochastic volatility models generate a skew, in terms of vega dspot.
+
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    For volatility smile, if we look at the vega gamma plot with respect to strike, K, we will find that it is almost symmetric with respect to ATM. And both sides are larger than zero while ATM is equal to zero. Right now, there would be an arbitrage opportunity, imagine people go to long the high strike ones, and short the ATM so as to vega hedge their position. Then, their portfolio will have zero vega and positive vega gamma. Now, if vol goes up, vega becomes positive because of positive vega gamma, so the price goes up, we make some money. If vol goes down, vega becomes negative, but the price still goes up, we still make money. So, whichever way sigma moves, we will make money. Similarly, this strategy applies to the low strike as well because of the symmetric. So, people will go to long high strike and low strike while short the ATM. This will push up the vol of high strike and low strike and push down the ATM's vol until there is no arbitrage opportunity any more. \\
+
+    For volatility skew, assumes the correlation between spot and vol is positive. If we look at the vega dspot plot with respect to strike. People will come up with an arbitrage strategy. We long the hight strike, short the low strike and the ATM so as the vega is zero. Becasue we are assuming positive relation between spot and vol. When the spot goes up, the vol goes up. vega is positive due to positive vega dspot, we can make money. When the spot goes down, the vol goes down, vega is negative due to positive vega dspot, we still make money. So this arbitrage strategy will let people goes to long high strike and short low strike and ATM, which will lead to a positive skew. When the correlation between spot and vol is negative, people will goes up long low strike and short ATM and short high strike so as to vega hedge their portfolio and have the negative vega dspot. Similarly, people can make money whichever way the spot move. This will lead to a negative skew. 
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (2 marks):}
+
+    Why do most FX shops use a “sticky delta” volatility market model when defining delta for hedging purposes, even though that might not give the most accurate estimate of how implied volatilities, and hence portfolio prices, change when spot moves?
+
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    Because vol-by-delta is quoting convention and they want to think about PNL in that way.
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (4 marks):}
+
+    Consider an ATM EURGBP option with 0.5y to expiration. Assume the EURGBP ATM volatility is 3.5\%, the EURUSD ATM volatility is 8.5\%, and the GBPUSD ATM volatility is 7.5\%. What is the implied correlation between EURUSD and GBPUSD spots? \\
+
+    EURUSD spot is 1.25 and GBPUSD spot is 1.56; assume zero interest rates. \\
+
+    Use the Black-Scholes vega formula to calculate the vegas of all three options and determine the notionals of EURUSD and GBPUSD options needed to hedge the vegas of 1 EUR notional of the EURGBP option, assuming correlation stays constant.
+
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    Assuming we are in the Black Scholes world, we have two USD pairs and one cross pair. They all follow the log normal process. 
+
+    \begin{eqnarray}
+      EURUSD: dS_1 = \sigma_1 S_1 dZ_1 \\
+      GBPUSD: dS_2 = \sigma_2 S_2 dZ_2 \\
+      EURGBP: dS_x = \sigma_x S_x dZ_x
+    \end{eqnarray}
+
+    And we have,
+    \begin{equation}
+      \sigma_x = \sqrt{\sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2}
+    \end{equation}
+
+    Therefore, 
+    \begin{equation}
+      \rho = \frac{\sigma_1^2 + \sigma_2^2 - \sigma_x^2}{2 \sigma_1 \sigma_2} = \frac{0.085^2 + 0.075^2 - 0.035^2}{2 * 0.085 * 0.075} = 0.9117647
+    \end{equation}
+
+    From Black Schole vega formula, we have
+    \begin{equation}
+      vega = S_0 N'(d_1)\sqrt{T-t} = S_0 \frac{1}{2 \pi} e^{-\frac{d_1^2}{2}}\,\sqrt{T-t}
+    \end{equation}
+
+    where $d_1 = \frac{\sigma * \sqrt{T-t}}{2}$, because of ATM and zero interest rate.
+
+    The spot of the cross pair is,
+    \begin{equation}
+      S_x = \frac{S_1}{S_2} = \frac{1.25}{1.56} = 0.8012821
+    \end{equation}
+
+    \begin{eqnarray}
+      vega_1 = S_1 \frac{1}{2 \pi} e^{-\frac{d1_{S1}^2}{2}} * \sqrt{T - t} = 0.352459296376 \\
+      vega_2 = S_2 \frac{1}{2 \pi} e^{-\frac{d1_{S2}^2}{2}} * \sqrt{T - t} = 0.439913190997 \\
+      vega_x = S_x \frac{1}{2 \pi} e^{-\frac{d1_{Sx}^2}{2}} * \sqrt{T - t} = 0.226020188075
+    \end{eqnarray}
+
+    We construct a portfolio is,
+    \begin{equation}
+      \Pi = S_x + N_1S_1 + N_2S_2 
+    \end{equation}
+
+    In order to hedge the vol risk, we need,
+    \begin{eqnarray}
+      \frac{\partial \Pi}{\partial \sigma_1} = vega_x \frac{\partial \sigma_x}{\partial \sigma_1} + N_1Vega_1 + N_2vega_2\frac{\partial \sigma_2}{\partial \sigma_1} = 0 \\
+      \frac{\partial \Pi}{\partial \sigma_2} = vega_x \frac{\partial \sigma_x}{\partial \sigma_2} + N_2Vega_2 + N_1vega_1\frac{\partial \sigma_1}{\partial \sigma_2} = 0 
+    \end{eqnarray}
+      
+    Because $\sigma_1$ and $\sigma_2$ are independent, we have, $\frac{\partial \sigma_2}{\partial \sigma_1} = 0$ and $\frac{\partial \sigma_1}{\partial \sigma_2} = 0$, so we have,
+    \begin{eqnarray}
+      \frac{\partial \Pi}{\partial \sigma_1} = vega_x \frac{\partial \sigma_x}{\partial \sigma_1} + N_1Vega_1 = 0 \\
+      \frac{\partial \Pi}{\partial \sigma_2} = vega_x \frac{\partial \sigma_x}{\partial \sigma_2} + N_2Vega_2 = 0 
+    \end{eqnarray}
+
+    Then,
+     \begin{eqnarray}
+       N_1 = -\frac{vega_x}{vega_1} \frac{\partial \sigma_x}{\partial \sigma_1} \\
+       N_2 = -\frac{vega_x}{vega_2} \frac{\partial \sigma_x}{\partial \sigma_2} 
+    \end{eqnarray}   
+
+     Take derivative of $\sigma_x$ with respect to $\sigma_1$ and $\sigma_2$, we have,
+     \begin{eqnarray}
+       \frac{\partial \sigma_x}{\partial \sigma_1} = \frac{\sigma_1 - 2\,\rho\,\sigma_2}{\sigma_x} \\
+       \frac{\partial \sigma_x}{\partial \sigma_2} = \frac{\sigma_2 - 2\,\rho\,\sigma_1}{\sigma_x}
+     \end{eqnarray}
+
+     Plug into the number, we have,
+     \begin{eqnarray}
+       N_1 = -0.304466663829 \\
+       N_2 = 0.0366988294024
+     \end{eqnarray}    
+     
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Programming assignments. Predicted cross vol difference and daily change cross vol statistics
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    \begin{enumerate}
+    \item  T = 1w 
+      \begin{enumerate}
+      \item Predicted difference sd:  1.186038       
+      \item Predicted diffence max:  14.951415
+      \item Predicted diffence min: -13.923782
+      \item daily change sd: 1.795480
+      \item daily change max: 18.805000
+      \item daily change min: -15.880000
+      \end{enumerate}
+
+    \item  T = 1m
+      \begin{enumerate}
+      \item Predicted difference sd: 0.742401        
+      \item Predicted diffence max:  7.866179
+      \item Predicted diffence min: -7.311626
+      \item daily change sd: 1.096523
+      \item daily change max: 12.547500
+      \item daily change min: -8.627500
+      \end{enumerate}
+
+    \item  T = 6m
+      \begin{enumerate}
+      \item Predicted difference sd: 0.383226        
+      \item Predicted diffence max:  5.884164
+      \item Predicted diffence min: -3.415851
+      \item daily change sd: 0.575049
+      \item daily change max: 4.922500
+      \item daily change min: -3.722500
+      \end{enumerate}
+
+    \item  T = 1y
+      \begin{enumerate}
+      \item Predicted difference sd:  0.315963    
+      \item Predicted diffence max:  4.605420
+      \item Predicted diffence min: -3.265282
+      \item daily change sd: 0.431407
+      \item daily change max: 3.717500
+      \item daily change min: -2.482500
+      \end{enumerate}
+
+
+    \end{enumerate}
+
+
+    \textbf{Usage:} \\
+    To replicate the result, go to the code directory, open a terminal, then type 
+    \begin{center}
+      python testHW4.py
+    \end{center}
+
+    \textbf{comments:} \\
+    As we can see, as the tenor goes up, the standard deviation of the predicted difference and daily changes goes down. This also works for the max/min deviation. This is because of as the tenor goes up, from the daily change numbers, we see the market is becoming more stable. And our predicted cross vol is becoming more acurate.
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+\end{document}

@@ -1,0 +1,340 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{HW 3} % Assignment title
+\newcommand{\hmwkDueDate}{Sept 30,\ 2015} % Due date
+\newcommand{\hmwkClass}{FX Modeling} % Course/class
+\newcommand{\hmwkClassTime}{Sept 16,\ 2015} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Mark Higgins} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhenfeng Liang} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (4 marks)(How to incorporate `the premium currency is the asset currency`?):}
+    Derive the expression for the ATM strike, given the ATM volatility and other market parameters, in the case where the market convention premium currency is the asset currency. In that case the price of the portfolio is,
+    \begin{equation}
+      \Pi(S) = v(S) - S\frac{v_0}{S_0}
+    \end{equation}
+    where $\Pi(S)$ is the price of the portfolio (which varies with spot S), $v(S)$ is the price of the option (which varies with spot S), S is the spot, $S_0$is the initial spot (at the time of the trade), and $v_0$ is the initial price of the option (equal to $v(S_0)$). Note that the option here might be a call or might be a put. \\
+
+    Calculate the derivative of $\Pi(S)$ with respect to S to get the delta of the portfolio (taking at spot $S = S_0$ ), and then solve for the strike that makes the delta of a call portfolio equal to the negative of the delta of a put portfolio (using Black-Scholes formulas for the call and put prices and deltas).
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    Take derivative of $\Pi(S)$ with respect to S, we have,
+    \begin{equation}
+      \frac{\partial \Pi}{\partial S}|_{S = S0} = \frac{\partial v}{\partial S}|_{S=S0} - \frac{v_0}{S_0}
+    \end{equation}
+ 
+   where $v_0$ could be the value of call/put option.
+ 
+    From BlackScholes model, we have,
+    \begin{eqnarray}
+      \Delta_c = \frac{\partial v_{call}}{\partial S}|_{S=S0} = e^{-qT}N(d_1) \\
+      \Delta_p = \frac{\partial v_{put}}{\partial S}|_{S=S0} = -e^{-qT}N(-d_1) \\
+      v_0(call) = S_0e^{-qT}N(d_1) - e^{-rT}KN(d_2) \\
+      v_0(put) = e^{-rT}KN(-d_2) - S_0e^{-qT}N(-d_1)
+    \end{eqnarray}
+    where $N(x)$ is the distribution function of standard normal. \\
+
+    Plug into the portfolio delta formula above, we have,
+    \begin{eqnarray}
+      \frac{\partial \Pi}{\partial S}|_{S = S0}(call) = \frac{K}{S_0}e^{-rT}N(d_2) \\
+      \frac{\partial \Pi}{\partial S}|_{S = S0}(put) = -\frac{K}{S_0}e^{-rT}N(-d_2) \\
+    \end{eqnarray}
+
+    In order to be delta neutral, we need,
+    \begin{equation}
+      \frac{\partial \Pi}{\partial S}|_{S = S0}(call) = -\frac{\partial \Pi}{\partial S}|_{S = S0}(put)
+    \end{equation}
+
+    Only when $d_2 = 0$, the above equation holds, we have,
+    \begin{equation}
+      d_2 = \frac{ln(\frac{S_0}{K_A}) + (r - q - \frac{\sigma^2}{2})T}{\sigma \sqrt{T}} = 0
+    \end{equation}
+
+    Therefore, we have,
+    \begin{equation}
+      K_A = Fe^{-\frac{\sigma^2}{2}T}
+    \end{equation}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (4 marks):}
+    Assume an FX market where the spot is 1, time to expiration is 0.5y, forward points are +0.0040, and the denominated discount rate is 1.75\%. What is the strike corresponding to a 25-delta call option when its implied volatility is 8.75\%, using market-convention delta? Assume the market convention premium currency is the denominated currency.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    \begin{equation}
+      K_c = Fe^{\frac{\sigma_K^2}{2}T - \sigma_K\sqrt{T}N^{-1}(\Delta_ce^{qT})}
+    \end{equation}
+
+    From the question, we are provied,
+    \begin{eqnarray}
+      S = 1.0 \\
+      F = 1.0040 \\
+      T = 0.5 \\
+      \sigma_K = 0.0875 \\
+      \Delta_c = 0.25 \\
+      r = 0.0175 
+    \end{eqnarray}
+
+    But we don't know $e^{qT}$. Let's derive now, we know,
+    \begin{equation}
+      F = S*e^{(r - q)T}
+    \end{equation}
+    So, we have,
+    \begin{equation}
+      e^{qT} = \frac{Se^{rT}}{F}
+    \end{equation}
+
+    So, our equation becomes,
+    \begin{equation}
+      K_c = Fe^{\frac{\sigma_K^2}{2}T - \sigma_K\sqrt{T}N^{-1}(\Delta_c \frac{Se^{rT}}{F})}
+    \end{equation}
+
+    Plug the number into the formula and solve it by R:
+    \begin{eqnarray}
+      &&K_c = Fe^{\frac{\sigma_K^2}{2}T - \sigma_K\sqrt{T}N^{-1}(\Delta_c \frac{Se^{rT}}{F})} \\
+      &=& 1.004e^{0.5\frac{0.0875^2}{2} - 0.0875 \sqrt{0.5} N^{-1}(0.25 \frac{e^{0.0175*0.5}}{1.0040})} \\
+      &=& 1.048548
+    \end{eqnarray}
+    
+    Attaching the R code for later check:
+    \begin{center}
+      F = 1.0040 \\
+      S = 1.0 \\
+      T = 0.5 \\
+      sigma = 0.0875 \\
+      delta = 0.25 \\
+      r = 0.0175 \\
+      res = F * exp(sigma*sigma / 2 * T - sigma * sqrt(T) * qnorm(delta * S * exp(r * T) / F)) 
+    \end{center}
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (2 marks):}
+    Describe the risk reversal “beta”.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    The slope of a linear regression of day-on-day risk reversal change against spot log return, i.e. A number like 0.2 means risk reversal gets more positive by 0.2 vols for every 1\% move up in spot
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question (2 marks):}
+    Explain the two arbitrage conditions that should be avoided when interpolating in the strike direction, and the one (weak) arbitrage condition to avoid when interpolating in the time direction.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    When interpolating in the strike direction, two arbitrage conditions include: \\
+    First, $\frac{dC}{dK} > 0$, we can buy a call at strike $K$ and sell a call at strike $K + dK$. By the time you put the trade, you will make money because $\frac{dC}{dK} > 0$. When spot is less than $K$, payoff is zero. When spot is larger than $K + dK$, payoff is $dK$, positive. When spot is between $K$ and $K + dK$, pay off is $S - K$, positive. So, we can arbitrage with this. \\
+
+    Second, $\frac{d^2C}{dK^2} < 0$. Buy one call strike at $K - dK$ and another one at $K + dK$. Sell two call strike at $K$. By the time we put the trade, we will make money because of the $\frac{d^2C}{dK^2} < 0$. When the spot is less than $K - dK$ or larger than $K + dK$, the payoff is zero. When the spot is between $K - dK$ and $K + dK$, the payoff is triangle which is always positive. So, we can arbitrage with this. \\
+
+    Interpolating in time direction: \\
+    Negative forward variance: if we use the piecewise-constant method to interpolate the vol in the time direction, then revert it to calculate the forward vairance between 0 and $T$, we might get a negative forward variance. This is not allowed – there is a kind of arbitrage in the time direction, though not a perfect arbitrage because it assumes Black-Scholes dynamics.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Programming assignments. Cubic Spliner for the volatility interpolation. See assignment document for details.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    \textbf{Intuition:} \\
+    If you run the program, you can see it will generate a graph with two curves on it. The two curves are almost on the top of each other, only with a little bit different around the ATM. The shapes of the plot is showing the volatility has positive skew which is consistent with our market input. Second, the left and right sides of the graph shows that it is converging to some values which make sense because of the property of the cubic spline, since the first derivative and the second derivative go to zero when the skrike goes to either edge.
+
+    \textbf{Usage:} \\
+    To replicate the result, go to the code directory, open a terminal, then type 
+    \begin{center}
+      python runAssignment3.py 
+    \end{center}
+
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+\end{document}

@@ -1,0 +1,431 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle} % Top center header
+\rhead{\firstxmark} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{HW 2} % Assignment title
+\newcommand{\hmwkDueDate}{Sept 16,\ 2015} % Due date
+\newcommand{\hmwkClass}{FX Modeling} % Course/class
+\newcommand{\hmwkClassTime}{Sept 9,\ 2015} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Mark Higgins} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhenfeng Liang} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+\vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+\vspace{3in}
+}
+
+\author{\textbf{\hmwkAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Why are correlations of daily returns of spot vs daily returns of forward prices so high in the FX markets? What are the two requirements a market must support to enforce a high correlation across the forward curve?
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    (1) \\
+    People can arbitrage between Spot and Forward. So the spot and Forwards will move together with some relations. \\
+
+    (2) \\
+    First, you need to be able to store currencies and receive an interest rate for them. \\
+    Second, you need to be able to borrow/short currencies and pay an interest rate for them. \\
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Why is risk management more complex for an FX forwards risk manager than for an FX spot risk manager?
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    Forwards have one more dimension, tenor, than the spot. It might be hard for them to hedge this perfectly. Reasons are as follows: \\
+    1. Not all trades are fungible with each other, like with spot \\
+    2. “Benchmark” tenors trade in the broker market for inter-dealer trades \\
+    3. Clients can trade any settlement date they like \\
+    4. Spreads are not tighter for benchmark settlement dates \\
+    5. Liquidity runs out to 2-3y for most currency pairs  \\
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Explain why risk to FX forward points can be expressed as risk to non-USD interest rates.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    The “forwards” traders are really FX swap traders. They trade outright forward vs spot as their product. Not much spot risk; really they are trading interest rates. \\ \\
+    Mathematically, due to the spot/forward arbitrage, the fair forward price is: 
+
+    \begin{equation}
+      F(t,T) = S(t)e^{R(t,T) - Q(t,T)(T - t)}
+    \end{equation}
+
+    which is related to the USD and non USD interest rate.
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Assume a portfolio has just one FX forward position in it, settling on a date T which lies between two benchmark settlement dates T1 and T2. Derive the notionals N1 and N2 of the benchmark forwards which hedge the portfolio risk assuming triangle shocks to the benchmark non-USD interest rates, as shown on page 21 of the lecture notes.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    From the note, we have the first order sensitivity. \\
+    \begin{equation}
+      \frac{\partial v}{\partial Q} = -STe^{-QT}
+    \end{equation}
+    
+    So, apply this formula into two benchmark forward contract, we have,
+    \begin{equation}
+      \frac{\partial v_1}{\partial Q} = -ST_1e^{-QT_1}
+    \end{equation}
+    \begin{equation}
+      \frac{\partial v_2}{\partial Q} = -ST_2e^{-QT_2}
+    \end{equation}
+
+    Therefore, in order to hedge the risk to zero coupon bond rate for asset currency, Q, we have to let the following formula holds:
+    \begin{equation}
+      \frac{\partial v}{\partial Q} = N_1 \frac{\partial v_1}{\partial Q} + N_2 \frac{\partial v_2}{\partial Q}
+    \end{equation}
+
+    So, plug the respective formulas into the above one, we have:
+    \begin{equation}
+      Te^{-QT} = N_1 T_1 e^{-QT_1} + N_2 T_2 e^{-QT_2}
+    \end{equation}
+
+    So, set the exponential term equal, we must have $e^{-Q(T-T_1)}$ in $N_1$ and $e^{Q(T_2 - T)}$ in $N_2$. \\
+    Similarly, in order to match $T$ term on both sides, we must have $\frac{T_2 - T}{T_2 -T_1}\frac{T}{T_1}$ in $N_1$ and $\frac{T - T_1}{T_2 - T_1}\frac{T}{T_2}$ in $N_2$
+
+    Then, we have, 
+    \begin{eqnarray}
+      N_1 = \frac{T_2 - T}{T_2 -T_1}\frac{T}{T_1} e^{-Q(T-T_1)} \\
+      N_2 = \frac{T - T_1}{T_2 - T_1}\frac{T}{T_2} e^{Q(T_2 - T)}
+    \end{eqnarray}
+    where $T$ lies between $T_1$ and $T_2$ \\
+    Note: $N_1$ and $N_2$ are the absolute position we need to take in order to hedge one unit asset currency notional of a forward contract. BUT make sure to take the opposite position of the forward contract. \\
+
+    When $T$ is prior to $T_1$, we can only use benchemark whose tenor is $T_1$ to hedge, so following formula need to hold:
+    \begin{equation}
+       \frac{\partial v}{\partial Q} = -STe^{-QT} =  N_1 \frac{\partial v_1}{\partial Q} = - N_1 ST_1e^{-QT_1}
+    \end{equation}
+    We have,
+    \begin{equation}
+      N_1 = \frac{T}{T_1} e^{-Q(T-T_1)}
+    \end{equation}
+    Note: $N_1$ is the absolute position we need to take in order to hedge one unit asset currency notional of a forward contract. BUT make sure to take the opposite position of the forward contract. \\
+
+    When $T$ is after $T_2$, we can only use benchemark whose tenor is $T_2$ to hedge, so following formula need to hold:
+    \begin{equation}
+       \frac{\partial v}{\partial Q} = -STe^{-QT} =  N_2 \frac{\partial v_2}{\partial Q} = - N_2 ST_1e^{-QT_1}
+    \end{equation}
+    We have,
+    \begin{equation}
+      N_2 = \frac{T}{T_2} e^{-Q(T-T_2)}
+    \end{equation}
+    Note: $N_2$ is the absolute position we need to take in order to hedge one unit asset currency notional of a forward contract. BUT make sure to take the opposite position of the forward contract.
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Explain principal component analysis and factor models, focusing on the differences between the two approaches to reduce dimensionality.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+    
+    Principal component analysis is to look for most important (non-parametric) shocks that tend to drive moves in the whole curve, eg parallel shift, tilt move, bend move, etc involving extracting linear composites of observed variables. \\
+    Factor analysis is based on a formal model predicting observed variables from theoretical latent factors.
+
+    Difference: \\
+    1. Clearly, PCA is simply to pick up the most "important" variables you have "picked" automatically, while the factor models is to formulate a model with common factors you think that is important. \\
+    2. Factor models have fixed number of parameters while PCA might grow the number of parameters with the amount of training data. \\
+    3. Non-parametric, PCA, is harder to be understood properly. Can have unusual shapes due to specific data points in the history you’re using. \\
+    4. Non-parametric shock shapes change over time. 
+    
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%   PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+  \begin{homeworkSection}{Question:}
+    Programming assignments. Monte Carlo simulation to see performance between different hedging strategies. See assignment document for details.
+  \end{homeworkSection}
+  \begin{homeworkSection}{Solution}
+
+    First, let us derive the two factor hedging notionals.
+    When $T \neq T_1$ and $T \neq T_2$, we use two benchmark to hedge the factor risk, Suppose, $N_1$, $N_2$, we constructed the portfolio as follow: 
+
+    \begin{eqnarray}
+      P &=& V_T - N_1V_{T_1} - N_2V_{T_2} \\ 
+        &=& Se^{-QT} - Ke^{-RT} - N_1(Se^{-QT_1} - K_1e^{-RT_1}) - N_2(Se^{-QT_2} - K_2e^{-RT_2}) \nonumber
+    \end{eqnarray}
+
+    In order to hedge two factors, in general, we need to take derivative of $P$ with respect to $z_1$ and $z_2$, and set it to zero. \\
+    With some dirty rearrangement, We get following linear system. \\
+
+    \begin{eqnarray}
+      Te^{-(\beta_1 + Q)T} = N_1T_1e^{-(\beta_1 + Q)T_1} + N_2T_2e^{-(\beta_1 + Q)T_2} \\
+      Te^{-(\beta_2 + Q)T} = N_1T_1e^{-(\beta_2 + Q)T_1} + N_2T_2e^{-(\beta_2 + Q)T_2} \\
+    \end{eqnarray}
+
+    More rearrangement,
+    \begin{eqnarray}
+      aN_1 + bN_2 = 1 \\
+      cN_1 + dN_2 = 2
+    \end{eqnarray}
+
+    where $a,\ b,\ c,\ d$ are as follows:
+    \begin{eqnarray}
+      a = \frac{T_1}{T}e^{-(\beta_1 + Q)(T_1 - T)} \\
+      b = \frac{T_2}{T}e^{-(\beta_1 + Q)(T_2 - T)} \\
+      c = \frac{T_1}{T}e^{-(\beta_2 + Q)(T_1 - T)} \\
+      d = \frac{T_2}{T}e^{-(\beta_2 + Q)(T_2 - T)} 
+    \end{eqnarray}
+
+    Solved the linear system, we have:
+    \begin{eqnarray}
+      N_1 = \frac{b - d}{bc - ad} \\
+      N_2 = \frac{c - a}{bc - ad}
+    \end{eqnarray}
+
+    When $T = T_1$, we let $N_1 = 1 \  N_2 = 0$ \\
+    When $T = T_2$, we let $N_1 = 0 \  N_2 = 1$ \\
+    
+    
+    \textbf{Results:} \\
+
+    
+    Number of path is 10000 
+    \begin{enumerate}
+    \item  T = 0.1 
+      \begin{enumerate}
+      \item UnHedged sd is 2.95967082838e-05         
+      \item TriHedged sd is 1.89484182533e-06 
+      \item FactorHedged sd is 1.62255991279e-07 
+      \end{enumerate}
+
+    \item T = 0.25 
+      \begin{enumerate}
+      \item UnHedged sd is 7.21445381694e-05 
+      \item TriHedged sd is 0.0  
+      \item FactorHedged sd is 0.0 
+      \end{enumerate}
+
+    \item T = 0.5 
+      \begin{enumerate}
+      \item UnHedged sd is 0.000131005261638 
+      \item TriHedged sd is 1.70535609484e-06 
+      \item FactorHedged sd is 1.33064738283e-07 
+      \end{enumerate}
+
+     \item T = 0.75
+      \begin{enumerate}
+      \item UnHedged sd is 0.000182866894417
+      \item TriHedged sd is 2.47868611631e-06
+      \item FactorHedged sd is 1.2329503197e-07 
+      \end{enumerate}
+
+     \item T = 1.0
+      \begin{enumerate}
+      \item UnHedged sd is 0.000226708062772
+      \item TriHedged sd is 0.0
+      \item FactorHedged sd is 0.0 
+      \end{enumerate}    
+
+     \item T = 2.0
+      \begin{enumerate}
+      \item UnHedged sd is 0.00036205892176
+      \item TriHedged sd is 0.000131105439505
+      \item FactorHedged sd is 1.1320686058e-06
+      \end{enumerate}    
+
+    \end{enumerate}
+
+
+    \textbf{Discussion:} \\
+    As we can see, when T is 0.25 or 1.0, both Triangle hedge and Two factor model hedge can do a perfect hedge, that is because T is the benchmark we use to hedge and then the program decided to just use the only respective benchmark to hedge the risk. And the result show that in general the factor models does a better hedge than the triangle hedge by around one order. Across different Tenor, T, it shows that when the Tenor come closer to one of the benchmark, the hedging performance is better, when Tenor, T, is getting further away than both hedging benchmarks, the hedging performance is getting worse.  \\
+
+    
+    \textbf{Usage of code:} \\
+    To replicate the result, go to the code directory, open a terminal, then type 
+    \begin{center}
+      python runHedgeEngine.py \textbar \ tee log
+    \end{center}
+
+
+  \end{homeworkSection}
+\end{homeworkProblem}
+
+
+\end{document}
